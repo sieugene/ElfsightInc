@@ -11,6 +11,7 @@ const AlbumSlider = (props) => {
     const ShowModal = (id, index) => {
         if (!active) {
             changeCurrent(null);
+            changeCurrnetIndex(undefined);
         }
         toggleActive(!active)
         changeCurrent(id);
@@ -18,21 +19,19 @@ const AlbumSlider = (props) => {
     }
 
     const NextImage = () => {
-        changeCurrnetIndex(currentIndex + 1);
-        if (props.currentAlbum.length <= currentIndex) {
-
-            changeCurrnetIndex(currentIndex - 1);
+        changeCurrnetIndex(currentIndex + 1)
+        if (props.currentAlbum.length <= currentIndex + 1) {
+            changeCurrnetIndex(props.currentAlbum.length - 1);
         } else {
-
-            changeCurrent(props.currentAlbum[currentIndex].id)
+            changeCurrent(props.currentAlbum[currentIndex + 1].id)
         }
     }
     const PrevImage = () => {
         changeCurrnetIndex(currentIndex - 1);
-        if (currentIndex < 0) {
-            changeCurrnetIndex(currentIndex + 1);
+        if (currentIndex - 1 === -1) {
+            changeCurrnetIndex(0);
         } else {
-            changeCurrent(props.currentAlbum[currentIndex].id)
+            changeCurrent(props.currentAlbum[currentIndex - 1].id)
         }
     }
     //for modal end

@@ -6,6 +6,7 @@ import { withRouter, Route } from 'react-router-dom';
 import AlbumsContainer from './Components/Album/AlbumsContainer';
 import CurrentAlbumContainer from './Components/Album/CurrentAlbum/CurrentAlbumContainer';
 import { AppStateType } from './redux/store';
+import Header from './Components/Header/Header';
 
 type PropsType = {
   location: {
@@ -17,6 +18,7 @@ const App: React.FC<PropsType> = (props: PropsType) => {
 
   return (
     <div className="App">
+      <Header/>
       <div className="container">
         <Route exact path='/' render={() => <GalleryContainer />} />
         <Route exact path='/albums/:userId?' render={() => <AlbumsContainer />} />
@@ -28,7 +30,7 @@ const App: React.FC<PropsType> = (props: PropsType) => {
 
 let MapStateToProps = (state: AppStateType) => {
   return {
-
+   
   }
 }
 
