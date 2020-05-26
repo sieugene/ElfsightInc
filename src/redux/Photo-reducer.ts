@@ -5,7 +5,7 @@ import { PhotosAPI } from './../Api/api';
 const LOADED_IMAGES = 'PHOTO/LOADED_IMAGES'
 const SET_PHOTOS = 'PHOTO/SET_PHOTOS'
 
-type PhotosType = {
+export type PhotosType = {
     albumId: number
     id: number
     title: string
@@ -24,7 +24,7 @@ const PhotoReducer = (state = initialState, action: ActionsType): InitialStateTy
         case SET_PHOTOS: 
         return{
             ...state,
-            photos: {...action.photos}
+            photos: [...action.photos]
         }
         case LOADED_IMAGES:
             return {
@@ -71,11 +71,11 @@ type ThunkType = ThunkAction<Promise<void>, GetStateType, unknown, ActionsType>
 
 
 export const getPhotosTC = (): ThunkType => async (dispatch) => {
-    debugger
     dispatch(loadedPhotosAC(false));
     let response = await PhotosAPI.getPhotos();
     dispatch(setPhotosAC(response));
     dispatch(loadedPhotosAC(true));
+
 }
 
 
