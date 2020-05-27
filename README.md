@@ -1,4 +1,4 @@
- # ElfsightInc test Task
+ # ElfsightInc test task
  ### Task[1]
 Description: By link https://jsfiddle.net/elfsight_ivanenko/cza8v6ej/ there is a car booking form that has a number of artificially created problems. You need to test the form and fix all the problems found in it.
 ### Result:
