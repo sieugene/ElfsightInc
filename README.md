@@ -1,6 +1,48 @@
-# ElfsightInc
-Test Task
-1 - https://jsfiddle.net/sieugene/bzhgkon8/latest/
+ # ElfsightInc test Task
+ ### Task[1]
+Description: By link https://jsfiddle.net/elfsight_ivanenko/cza8v6ej/ there is a car booking form that has a number of artificially created problems. You need to test the form and fix all the problems found in it.
+### Result:
+Bugs fixed:
+> - Fixed translate to `translate ($ {- formWrapperRect.width * state.step} px, 0)`, since this block was not visible.
+> - in async function fixed "recapcha" on `recaptcha`
+> - formBannerElement.classList.toggle ('form__banner - visible', state.success) was `added to render ()`,
+since the banner did not appear, as well as in handleFormSubmit, event.preventDefault () was added,
+so that there is no reload after submit form
+- Link - https://jsfiddle.net/sieugene/bzhgkon8/latest/
+
+ ### Task[2]
+Description: You need to develop a web application on React, which is a simple photo gallery.
+The user must have the following features:
+
+- View the author’s album list, where each album consists of a cover, title and number of photos in it
+- View a list of photos inside an album
+- Open the photo in the popup for detailed viewing
+- Flick through album photos inside popup
+- Return from a specific album to the album list
+
+As a data source, you must use the service https://jsonplaceholder.typicode.com/ (albums, photos, users).
+To build a UI, we ask you not to use ready-made components and libraries, since we want to see your development and layout skills.
+
+### Result:
+
+- Photos are displayed on the main page
+- When clicked, the transition to the album related to this photo will also be displayed in the first block, the photo on which the click was made
+- When you click on the image, a modal window will open in which you can view photos, to exit, you can press "X" or click outside the window.
+- When you click on the user’s album view, it will go to the page with albums related to the current user.
+- Being in the user's albums, when you click on an album, there will be a transition to an album in which there are photos.
+
+### `Not solved`:
+- There is a problem with CORS policies for gh-pages
+- No store cleaning on transitions
+- Not cleared request delay
+
+![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/1.png?raw=true) 
+![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/2.png?raw=true)
+![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/3.png?raw=true)
+![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/4.png?raw=true)
+![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/5.png?raw=true)
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -46,3 +88,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
