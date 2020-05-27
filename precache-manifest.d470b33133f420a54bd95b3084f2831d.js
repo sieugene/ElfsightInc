@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2d1a7cd7243f26fa497a7e8ab08f36bc",
+    "revision": "34fd47ca8693573d051160f94b9c9d2d",
     "url": "/ElfsightInc/index.html"
   },
   {
-    "revision": "a3bba64ebf304224a227",
+    "revision": "511d80c55eeb67bc4d17",
     "url": "/ElfsightInc/static/css/main.4041cb72.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ElfsightInc/static/js/2.73bfc464.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a3bba64ebf304224a227",
-    "url": "/ElfsightInc/static/js/main.7b3ce672.chunk.js"
+    "revision": "511d80c55eeb67bc4d17",
+    "url": "/ElfsightInc/static/js/main.de8f559f.chunk.js"
   },
   {
     "revision": "0fc60e691fb6057d2feb",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ElfsightInc/precache-manifest.d69b1f1ef4656a0d275267a3af1cc66e.js"
+  "/ElfsightInc/precache-manifest.d470b33133f420a54bd95b3084f2831d.js"
 );
 
 self.addEventListener('message', (event) => {
