@@ -22,7 +22,7 @@ const Gallery: React.FC<Props> = (props) => {
         <div className='row galleryWrap'>
             {props.photos.map((p) => {
                 return <React.Fragment key={p.id}>
-                    <NavLink to={'/album/' + p.albumId}>
+                    <NavLink to={'/album/' + p.albumId + '/photo/' + p.id}>
                         <div className='col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 card' style={setBackground(p.thumbnailUrl)}>
                             <h3 className="title">
                                 {p.title}

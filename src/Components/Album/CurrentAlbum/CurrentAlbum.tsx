@@ -2,6 +2,7 @@ import React from 'react'
 import { CurrentAlbumType, AlbumsUserType } from '../../../redux/Album-reducer'
 import { NavLink } from 'react-router-dom'
 import AlbumSlider from './AlbumSlider/AlbumSlider'
+import CurrentPhoto from './CurrentPhoto/CurrentPhoto'
 
 
 type Props = {
@@ -9,13 +10,17 @@ type Props = {
     authorAlbumId: null | number
     albumsUser: AlbumsUserType[]
     albumId: string
+    currentPhoto: CurrentAlbumType[]
 }
 
 
 const CurrentAlbum: React.FC<Props> = (props) => {
-
     return (
         <div>
+            <CurrentPhoto
+            currentPhoto={props.currentPhoto}
+            authorAlbumId={props.authorAlbumId}
+            />
             Current album {props.albumId}
             <h2>Author {props.authorAlbumId}</h2>
 

@@ -22,6 +22,7 @@ const App: React.FC<PropsType> = (props: PropsType) => {
       <div className="container">
         <Route exact path='/' render={() => <GalleryContainer />} />
         <Route exact path='/albums/:userId?' render={() => <AlbumsContainer />} />
+        <Route exact path='/album/:albumId?/photo/:photoId?' render={() => <CurrentAlbumContainer />} />
         <Route exact path='/album/:albumId?' render={() => <CurrentAlbumContainer />} />
       </div>
     </div>

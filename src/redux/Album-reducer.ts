@@ -111,20 +111,30 @@ type DispatchType = Dispatch<ActionsType>
 type ThunkType = ThunkAction<Promise<void>, GetStateType, unknown, ActionsType>
 
 
-export const setCurrAlbWithCurrUserIdTC = (albumId:number): ThunkType => async (dispatch) => {
-    dispatch(loadedAlbumsInfoAC(false));
-    let response = await PhotosAPI.getCurrentAlbum(albumId)
-    dispatch(setCurrentAlbumAC(response));
-    let newResponse = await AlbumsAPI.getAuthorAlbumId(albumId)
-    dispatch(setAuthorAlbumIdAC(newResponse[0].userId))
-    dispatch(loadedAlbumsInfoAC(true));
+export const setCurrAlbWithCurrUserIdTC = (albumId: number): ThunkType => async (dispatch) => {
+    try {
+        dispatch(loadedAlbumsInfoAC(false));
+        let response = await PhotosAPI.getCurrentAlbum(albumId)
+        dispatch(setCurrentAlbumAC(response));
+        let newResponse = await AlbumsAPI.getAuthorAlbumId(albumId)
+        dispatch(setAuthorAlbumIdAC(newResponse[0].userId))
+        dispatch(loadedAlbumsInfoAC(true));
+    }
+    catch (error) {
+        alert(error);
+    }
 }
 
-export const setAlbumsUserTC = (userId:number): ThunkType => async (dispatch) => {
-    dispatch(loadedAlbumsInfoAC(false));
-    let response = await AlbumsAPI.getAlbumsUser(userId)
-    dispatch(setAlbumsUserAC(response));
-    dispatch(loadedAlbumsInfoAC(true));
+export const setAlbumsUserTC = (userId: number): ThunkType => async (dispatch) => {
+    try {
+        dispatch(loadedAlbumsInfoAC(false));
+        let response = await AlbumsAPI.getAlbumsUser(userId)
+        dispatch(setAlbumsUserAC(response));
+        dispatch(loadedAlbumsInfoAC(true));
+    }
+    catch (error) {
+        alert(error);
+    }
 }
 
 

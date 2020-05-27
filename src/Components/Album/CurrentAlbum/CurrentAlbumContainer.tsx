@@ -8,7 +8,8 @@ import { AlbumsUserType, CurrentAlbumType } from './../../../redux/Album-reducer
 
 
 interface IProps extends RouteComponentProps<any> {
-    albumId?: string;
+    albumId?: string,
+    photoId?: string
 }
 type MapStateProps = {
     currentAlbum: CurrentAlbumType[]
@@ -26,6 +27,11 @@ const CurrentAlbumContainer: React.FC<PropsType> = (props) => {
         props.setCurrAlbWithCurrUserIdTC(Number(props.match.params.albumId))
         // eslint-disable-next-line
     }, [props.match.params.albumId])
+    //текущие фото при переходе
+    const currentPhoto = props.currentAlbum.filter((c) => {
+            return c.id === Number(props.match.params.photoId)
+        })
+    
     if (!props.loaded) {
         return <div>Загрузка</div>
     }
@@ -35,6 +41,7 @@ const CurrentAlbumContainer: React.FC<PropsType> = (props) => {
             albumsUser={props.albumsUser}
             authorAlbumId={props.authorAlbumId}
             albumId={props.match.params.albumId}
+            currentPhoto={currentPhoto}
         />
     )
 }

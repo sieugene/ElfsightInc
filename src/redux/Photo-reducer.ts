@@ -21,11 +21,11 @@ type InitialStateType = typeof initialState;
 
 const PhotoReducer = (state = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
-        case SET_PHOTOS: 
-        return{
-            ...state,
-            photos: [...action.photos]
-        }
+        case SET_PHOTOS:
+            return {
+                ...state,
+                photos: [...action.photos]
+            }
         case LOADED_IMAGES:
             return {
                 ...state,
@@ -71,10 +71,14 @@ type ThunkType = ThunkAction<Promise<void>, GetStateType, unknown, ActionsType>
 
 
 export const getPhotosTC = (): ThunkType => async (dispatch) => {
-    dispatch(loadedPhotosAC(false));
-    let response = await PhotosAPI.getPhotos();
-    dispatch(setPhotosAC(response));
-    dispatch(loadedPhotosAC(true));
+    try {
+        dispatch(loadedPhotosAC(false));
+        let response = await PhotosAPI.getPhotos();
+        dispatch(setPhotosAC(response));
+        dispatch(loadedPhotosAC(true));
+    }  catch(error){
+        alert(error);
+    }
 
 }
 
