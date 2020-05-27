@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import Gallery from './Gallery'
 import { getPhotosTC } from './../../redux/Photo-reducer';
 import { AppStateType } from '../../redux/store';
-import {PhotosType} from './../../redux/Photo-reducer'
+import { PhotosType } from './../../redux/Photo-reducer'
+import Preloader from '../Preloader/Preloader';
 
 type Props = MapStatePropsType & MapDispatchPropsType
 
@@ -16,26 +17,28 @@ type MapDispatchPropsType = {
     getPhotosTC: () => void
 }
 
-const GalleryContainer:React.FC<Props> = (props) => {
+const GalleryContainer: React.FC<Props> = (props) => {
     useEffect(() => {
-       props.getPhotosTC();
-       // eslint-disable-next-line
+        props.getPhotosTC();
+        // eslint-disable-next-line
     }, [])
-    if(!props.loaded){
-        return <div>Loading photos</div>
+    if (!props.loaded) {
+        return <Preloader />
     }
-    return(
-        <Gallery photos={props.photos}/>
+    return (
+
+        <Gallery photos={props.photos} />
+
     )
 }
 
 let MapStateToProps = (state: AppStateType) => {
-    return{
+    return {
         loaded: state.photos.loaded,
         photos: state.photos.photos
     }
 }
 
-export default compose(connect(MapStateToProps,{
+export default compose(connect(MapStateToProps, {
     getPhotosTC
 })(GalleryContainer))

@@ -50,7 +50,7 @@ export const AlbumsAPI = {
         })
     },
     getAuthorAlbumId(albumId: number) {
-        return axios.get<GetAlbumsResponseType[]>(`https://jsonplaceholder.typicode.com/albums?id=${albumId}`).then(response => {
+        return axios.get<GetAlbumsResponseType[]>(`https://jsonplaceholder.typicode.com/albums?id=${albumId}&_limit=1`).then(response => {
             return response.data
         })
     }

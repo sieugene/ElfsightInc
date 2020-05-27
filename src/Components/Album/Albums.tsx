@@ -32,9 +32,12 @@ const Albums: React.FC<Props> = (props) => {
                         <NavLink to={'/album/' + a.id}>
                             <div className="album-wrap col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
                                 <div className="album-item">
+                                    <p>
+                                        {a.title}
+                                    </p>
                                 </div>
                                 <h3 className='title'>{a.title}</h3>
-                                <h5 className='desc'>Номер альбома:{a.id}</h5>
+                                <h5 className='desc'>album number:{a.id}</h5>
 
                             </div>
                         </NavLink>

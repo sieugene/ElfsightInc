@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Modal from './../../../Modal/Modal';
+import GalleryItem from './../../../Gallery/GalleryItem/GalleryItem';
 
 const AlbumSlider = (props) => {
 
@@ -35,18 +36,6 @@ const AlbumSlider = (props) => {
         }
     }
     //for modal end
-
-    //дублирование
-    const setBackground = (url) => {
-        const min = 180;
-        const max = 280;
-        const rand = min + Math.random() * (max - min);
-        return {
-            backgroundImage: `url(${url})`,
-            height: rand
-        }
-    }
-
     return (
         <div className='row galleryWrap'>
             {props.currentAlbum.map((p, index) => {
@@ -61,15 +50,14 @@ const AlbumSlider = (props) => {
                         NextImage={NextImage}
                         close={() => { toggleActive(false) }}
                     />
-                    <div className='col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12 card' style={setBackground(p.thumbnailUrl)} onClick={
-                        () => {
-                            ShowModal(p.id, index);
-                        }
-                    }>
-                        <h3 className="title">
-                            {p.title}
-                        </h3>
-                    </div>
+                    <GalleryItem
+                        slider={true}
+                        title={p.title}
+                        id={p.id}
+                        index={index}
+                        ShowModal={ShowModal}
+                        thumbnailUrl={p.thumbnailUrl}
+                    />
                 </React.Fragment>
 
             })}

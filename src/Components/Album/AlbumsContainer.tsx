@@ -4,6 +4,7 @@ import { AppStateType } from '../../redux/store';
 import Albums from './Albums';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { setAlbumsUserTC, AlbumsUserType } from '../../redux/Album-reducer';
+import Preloader from '../Preloader/Preloader';
 
 
 interface IProps extends RouteComponentProps<any> {
@@ -25,7 +26,7 @@ const AlbumsContainer:React.FC<PropsType> = (props) => {
         // eslint-disable-next-line
     }, [props.match.params.userId])
     if(!props.loaded){
-        return <div>Загрузка альбомов пользователя</div>
+        return  <Preloader/>
     }
     return(
         <Albums

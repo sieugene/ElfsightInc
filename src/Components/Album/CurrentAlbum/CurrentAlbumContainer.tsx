@@ -5,6 +5,7 @@ import { AppStateType } from '../../../redux/store';
 import { setCurrAlbWithCurrUserIdTC } from './../../../redux/Album-reducer';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 import { AlbumsUserType, CurrentAlbumType } from './../../../redux/Album-reducer'
+import Preloader from '../../Preloader/Preloader';
 
 
 interface IProps extends RouteComponentProps<any> {
@@ -33,7 +34,7 @@ const CurrentAlbumContainer: React.FC<PropsType> = (props) => {
         })
     
     if (!props.loaded) {
-        return <div>Загрузка</div>
+        return  <Preloader/>
     }
     return (
         <CurrentAlbum

@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     h3 {
+        cursor: pointer;
         background: #46505c;
         padding: 9px;
         font-size: 14px;
@@ -19,6 +20,14 @@
         font-weight: 500;
         margin-top: 20px;
         margin-bottom: 20px;
+        transition: 0.3s all ease;
+        &:hover {
+            opacity: 0.65;
+        }
+        a {
+            text-decoration: none;
+            color: #f7f7f7;
+        }
     }
 }
 .galleryWrap {
@@ -34,6 +43,15 @@
         height: auto;
         width: 150px;
         .album-item {
+            overflow: hidden;
+            p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 15px;
+                height: 115px;
+            }
             cursor: pointer;
             background-repeat: no-repeat;
             background-size: cover;
