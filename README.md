@@ -31,16 +31,6 @@ To build a UI, we ask you not to use ready-made components and libraries, since 
 - When you click on the user’s album view, it will go to the page with albums related to the current user.
 - Being in the user's albums, when you click on an album, there will be a transition to an album in which there are photos.
 
-### `Not solved`:
-- There is a problem with CORS policies for gh-pages
-- No store cleaning on transitions
-- Not cleared request delay
-
-![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/1.png?raw=true) 
-![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/2.png?raw=true)
-![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/3.png?raw=true)
-![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/4.png?raw=true)
-![demo](https://github.com/sieugene/ElfsightInc/blob/master/src/assets/images/5.png?raw=true)
 
 
 
